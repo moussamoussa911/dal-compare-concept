@@ -1,3 +1,5 @@
+const BRAND_NAME = "Dal Compare";
+
 const translations = {
   de: {
     "nav.home": "Start", "nav.menu": "Speisekarte", "nav.booking": "Reservieren", "nav.restaurant": "Restaurant", "nav.legal": "Rechtliches",
@@ -204,7 +206,13 @@ function mountChrome() {
   header.innerHTML = `
     <header class="site-header">
       <div class="nav-bar">
-        <a class="brand" href="/" aria-label="Dal Compare Startseite"><strong>dal compare</strong><span>ristorante · ochtrup</span></a>
+        <a class="brand" href="/" aria-label="${BRAND_NAME} Startseite" data-brand-static translate="no">
+          <span class="brand-mark" aria-hidden="true">
+            <img class="brand-mark__base" src="/assets/images/brand-original.png" alt="">
+            <img class="brand-mark__color" src="/assets/images/brand-original.png" alt="">
+          </span>
+          <span class="sr-only">${BRAND_NAME}</span>
+        </a>
         <nav class="desktop-nav" aria-label="Hauptnavigation">
           ${links.map(([id,url,key]) => `<a class="${page === id ? "is-active" : ""}" href="${url}" data-i18n="${key}">${t(key)}</a>`).join("")}
         </nav>
@@ -226,7 +234,14 @@ function mountChrome() {
   footer.innerHTML = `
     <footer class="site-footer">
       <div class="footer-main">
-        <div class="footer-brand"><strong>dal compare</strong><span>Beim Freund · Ochtrup</span></div>
+        <div class="footer-brand" data-brand-static translate="no">
+          <span class="brand-mark brand-mark--footer" aria-hidden="true">
+            <img class="brand-mark__base" src="/assets/images/brand-original.png" alt="">
+            <img class="brand-mark__color" src="/assets/images/brand-original.png" alt="">
+          </span>
+          <strong class="sr-only">${BRAND_NAME}</strong>
+          <span>Beim Freund · Ochtrup</span>
+        </div>
         <div class="footer-col"><h3 data-i18n="common.contact">${t("common.contact")}</h3><a href="tel:+4925537201040">02553 720 1040</a><a href="mailto:info@dalcompare.de">info@dalcompare.de</a><a href="https://www.instagram.com/dal_compare/" target="_blank" rel="noopener">Instagram ↗</a></div>
         <div class="footer-col"><h3 data-i18n="common.hours">${t("common.hours")}</h3><p data-i18n="footer.weekdays">${t("footer.weekdays")}</p><p data-i18n="footer.saturday">${t("footer.saturday")}</p><p data-i18n="footer.sunday">${t("footer.sunday")}</p><p data-i18n="footer.closedTuesday">${t("footer.closedTuesday")}</p></div>
       </div>
@@ -245,6 +260,10 @@ function applyLanguage() {
     if (value) el.placeholder = value;
   });
   document.querySelectorAll("[data-lang]").forEach(button => button.classList.toggle("is-active", button.dataset.lang === lang));
+  document.querySelectorAll("[data-brand-static]").forEach(brand => {
+    brand.setAttribute("translate", "no");
+    if (brand.matches("a")) brand.setAttribute("aria-label", `${BRAND_NAME} Startseite`);
+  });
   updateOpenLabel();
   if (document.body.dataset.page === "menu") renderMenu();
   if (document.body.dataset.page === "booking") {
