@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#56232d">
+  <meta name="description" content="Speisekarte von Dal Compare in Ochtrup – Pizza, Pasta, Fisch, Fleisch und Dessert.">
+  <title>Speisekarte · Dal Compare</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="menu">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Zum Inhalt</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="page-hero page-hero--menu">
+      <div class="page-hero__copy reveal">
+        <p class="eyebrow">La carta</p>
+        <h1 data-i18n="menu.title">Was kommt auf den Tisch?</h1>
+        <p data-i18n="menu.lead">Klassiker, Lieblingsgerichte und ein bisschen Lust auf mehr. Stelle euren Tisch zusammen und behalte den Überblick.</p>
+      </div>
+      <div class="menu-sketch" aria-hidden="true">
+        <span>PASTA</span><i>×</i><span>PIZZA</span><i>×</i><span>AMICI</span>
+      </div>
+    </section>
+
+    <section class="menu-shell">
+      <div class="menu-toolbar">
+        <div class="menu-search">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+          <input id="menu-search" type="search" data-i18n-placeholder="menu.search" placeholder="Gericht suchen …" autocomplete="off">
+        </div>
+        <button class="table-toggle" type="button" data-table-toggle>
+          <span class="table-toggle__icon" aria-hidden="true">⌑</span>
+          <span data-i18n="menu.myTable">Mein Tisch</span>
+          <b data-cart-count>0</b>
+        </button>
+      </div>
+      <div class="menu-categories" id="menu-categories" aria-label="Menükategorien"></div>
+      <div class="menu-content">
+        <div class="menu-list" id="menu-list" aria-live="polite"></div>
+        <aside class="table-builder" id="table-builder" aria-label="Mein geplanter Tisch">
+          <button class="table-builder__close" type="button" data-table-close aria-label="Schließen">×</button>
+          <p class="eyebrow" data-i18n="menu.tableEyebrow">Euer Abend</p>
+          <h2 data-i18n="menu.tableTitle">Baut euren Tisch.</h2>
+          <p class="table-builder__intro" data-i18n="menu.tableIntro">Gerichte vormerken, Personen wählen und gemeinsam planen.</p>
+          <div class="person-picker">
+            <span data-i18n="menu.people">Personen</span>
+            <div><button type="button" data-people-minus aria-label="Eine Person weniger">−</button><strong data-people>2</strong><button type="button" data-people-plus aria-label="Eine Person mehr">+</button></div>
+          </div>
+          <div class="cart-items" data-cart-items></div>
+          <div class="cart-empty" data-cart-empty>
+            <span aria-hidden="true">🍽</span>
+            <p data-i18n="menu.empty">Noch ist der Tisch leer.</p>
+            <small data-i18n="menu.emptyHint">Füge Lieblingsgerichte mit + hinzu.</small>
+          </div>
+          <div class="cart-total">
+            <div><span data-i18n="menu.total">Gesamt</span><strong data-cart-total>0,00 €</strong></div>
+            <div><span data-i18n="menu.perPerson">Pro Person</span><strong data-per-person>0,00 €</strong></div>
+          </div>
+          <a class="button button--primary button--full" href="/reservieren"><span data-i18n="menu.reserveThis">Diesen Tisch reservieren</span><span>→</span></a>
+          <small class="menu-note" data-i18n="menu.note">Planungshilfe – keine Bestellung. Preise aus der veröffentlichten Karte 04/2024; bitte vor Ort bestätigen.</small>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>

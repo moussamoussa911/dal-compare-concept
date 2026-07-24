@@ -1,0 +1,13 @@
+{
+  "name": "dal-compare-concept",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Modern website concept for Dal Compare in Ochtrup",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check app.js && node --check server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

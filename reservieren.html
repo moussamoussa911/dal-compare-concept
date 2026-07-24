@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#56232d">
+  <meta name="description" content="Tischreservierung bei Dal Compare am Kirchplatz in Ochtrup.">
+  <title>Reservieren · Dal Compare</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body data-page="booking">
+  <a class="skip-link" href="#main" data-i18n="common.skip">Zum Inhalt</a>
+  <div id="site-header"></div>
+  <main id="main">
+    <section class="booking-hero">
+      <div class="booking-hero__copy reveal">
+        <p class="eyebrow">Prenota un tavolo</p>
+        <h1 data-i18n="booking.title">Wann sehen wir uns?</h1>
+        <p data-i18n="booking.lead">Drei kurze Schritte bis zu deinem italienischen Abend.</p>
+      </div>
+      <div class="booking-hero__meta">
+        <div><span data-i18n="booking.phoneLabel">Lieber persönlich?</span><a href="tel:+4925537201040">02553 720 1040</a></div>
+        <div><span data-i18n="booking.locationLabel">Mitten in Ochtrup</span><strong>Kirchplatz 1</strong></div>
+      </div>
+    </section>
+
+    <section class="booking-shell">
+      <nav class="booking-progress" aria-label="Reservierungsschritte">
+        <button type="button" class="is-active" data-booking-tab="1"><b>01</b><span data-i18n="booking.when">Wann</span></button>
+        <button type="button" data-booking-tab="2"><b>02</b><span data-i18n="booking.where">Wo & wer</span></button>
+        <button type="button" data-booking-tab="3"><b>03</b><span data-i18n="booking.details">Details</span></button>
+      </nav>
+      <form class="booking-form" id="booking-form">
+        <section class="booking-step is-active" data-booking-step="1">
+          <div class="booking-step__head"><p data-i18n="booking.step1">Schritt 1 von 3</p><h2 data-i18n="booking.chooseMoment">Wähle deinen Moment.</h2></div>
+          <div class="date-strip" id="date-strip"></div>
+          <fieldset class="time-field">
+            <legend data-i18n="booking.time">Uhrzeit</legend>
+            <div class="time-grid" id="time-grid"></div>
+          </fieldset>
+          <button class="button button--primary booking-next" type="button" data-next-step="2"><span data-i18n="common.continue">Weiter</span><span>→</span></button>
+        </section>
+
+        <section class="booking-step" data-booking-step="2">
+          <div class="booking-step__head"><p data-i18n="booking.step2">Schritt 2 von 3</p><h2 data-i18n="booking.chooseCompany">Mit wem kommst du?</h2></div>
+          <div class="guest-picker">
+            <p data-i18n="booking.guests">Anzahl Gäste</p>
+            <div class="guest-picker__value"><button type="button" data-guest-minus aria-label="Weniger Gäste">−</button><strong data-guest-count>2</strong><button type="button" data-guest-plus aria-label="Mehr Gäste">+</button></div>
+            <div class="guest-icons" data-guest-icons aria-hidden="true"></div>
+          </div>
+          <fieldset class="area-picker">
+            <legend data-i18n="booking.area">Lieblingsplatz</legend>
+            <label><input type="radio" name="area" value="restaurant" checked><span class="area-card"><i aria-hidden="true">♨</i><b data-i18n="booking.inside">Im Restaurant</b><small data-i18n="booking.insideHint">Warm, lebendig, mittendrin</small></span></label>
+            <label><input type="radio" name="area" value="terrace"><span class="area-card"><i aria-hidden="true">☼</i><b data-i18n="booking.outside">Auf der Terrasse</b><small data-i18n="booking.outsideHint">Wenn das Wetter mitspielt</small></span></label>
+          </fieldset>
+          <div class="booking-step__buttons">
+            <button class="button button--ghost" type="button" data-prev-step="1"><span>←</span><span data-i18n="common.back">Zurück</span></button>
+            <button class="button button--primary" type="button" data-next-step="3"><span data-i18n="common.continue">Weiter</span><span>→</span></button>
+          </div>
+        </section>
+
+        <section class="booking-step" data-booking-step="3">
+          <div class="booking-step__head"><p data-i18n="booking.step3">Schritt 3 von 3</p><h2 data-i18n="booking.almost">Fast geschafft.</h2></div>
+          <div class="booking-summary" data-booking-summary></div>
+          <div class="form-grid">
+            <label><span data-i18n="booking.name">Name</span><input name="name" required autocomplete="name" data-i18n-placeholder="booking.namePlaceholder" placeholder="Vor- und Nachname"></label>
+            <label><span data-i18n="booking.phone">Telefon</span><input name="phone" required autocomplete="tel" inputmode="tel" data-i18n-placeholder="booking.phonePlaceholder" placeholder="+49 …"></label>
+            <label><span data-i18n="booking.email">E-Mail</span><input name="email" type="email" required autocomplete="email" data-i18n-placeholder="booking.emailPlaceholder" placeholder="name@beispiel.de"></label>
+            <label class="form-grid__wide"><span data-i18n="booking.note">Wunsch oder Anlass (optional)</span><textarea name="note" rows="3" data-i18n-placeholder="booking.notePlaceholder" placeholder="Geburtstag, Kinderstuhl, Allergie …"></textarea></label>
+            <label class="privacy-check form-grid__wide"><input type="checkbox" required><span data-i18n="booking.privacy">Ich stimme der Verarbeitung meiner Angaben zur Reservierungsanfrage zu.</span></label>
+          </div>
+          <div class="booking-step__buttons">
+            <button class="button button--ghost" type="button" data-prev-step="2"><span>←</span><span data-i18n="common.back">Zurück</span></button>
+            <button class="button button--primary" type="submit"><span data-i18n="booking.submit">Reservierung anfragen</span><span>✓</span></button>
+          </div>
+          <p class="demo-note" data-i18n="booking.demo">Konzeptvorschau: Dieses Formular sendet noch keine echte Reservierung.</p>
+        </section>
+      </form>
+      <aside class="booking-aside">
+        <div class="booking-aside__art"><span>AMICI</span><i>+</i><span>VINO</span><i>+</i><span>TEMPO</span></div>
+        <blockquote data-i18n="booking.quote">„Der beste Tisch ist der, an dem noch jemand dazukommt.“</blockquote>
+        <img src="/assets/images/instagram-03.jpg" alt="Aperitivo bei Dal Compare" loading="lazy">
+      </aside>
+    </section>
+  </main>
+  <div class="modal" id="booking-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal__card">
+      <button type="button" class="modal__close" data-modal-close aria-label="Schließen">×</button>
+      <div class="modal__mark">✓</div>
+      <p class="eyebrow">Grazie!</p>
+      <h2 id="modal-title" data-i18n="booking.modalTitle">Der Tisch ist vorgemerkt.</h2>
+      <p data-i18n="booking.modalCopy">In der echten Version würde die Anfrage jetzt direkt beim Restaurant ankommen.</p>
+      <button class="button button--primary" type="button" data-modal-close data-i18n="booking.modalButton">Verstanden</button>
+    </div>
+  </div>
+  <div id="site-footer"></div>
+  <script src="/app.js" defer></script>
+</body>
+</html>
