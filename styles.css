@@ -2,8 +2,8 @@
   --wine: #e5462e;
   --wine-dark: #181614;
   --tomato: #ff5b3e;
-  --olive: #4355c5;
-  --olive-dark: #303fa8;
+  --olive: #45594b;
+  --olive-dark: #29382f;
   --cream: #f3efe7;
   --paper: #fffaf2;
   --butter: #f4cf5f;
@@ -259,7 +259,7 @@ button { color: inherit; }
 .hero__actions .button { background: var(--wine); color: white; }
 .hero__visual {
   position: relative; z-index: 1; min-height: 690px; align-self: center; overflow: hidden;
-  border-radius: 2rem; background: var(--olive); box-shadow: 0 28px 80px rgba(48,63,168,.2);
+  border-radius: 2rem; background: var(--olive); box-shadow: 0 28px 80px rgba(41,56,47,.2);
 }
 .hero__visual::before {
   position: absolute; inset: 0; opacity: .16;
